@@ -23,6 +23,7 @@ services:
       - "mysql"
     volumes:
       - "./www:/var/www/html/"
+      - "./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.php-apache.rule=Host(`localhost`, `lvh.me`, `pmamp.lvh.me`, `example.com`)"
@@ -50,12 +51,13 @@ services:
     image: "phpmyadmin/phpmyadmin"
     container_name: "pma"
     depends_on:
-      - "traefik"
+      - "mysql"
     links:
       - "mysql"
     environment:
       PMA_HOST: "mysql"
       PMA_PORT: "3306"
+      UPLOAD_LIMIT: "256M"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.whoami.rule=Host(`pma.lvh.me`)"
