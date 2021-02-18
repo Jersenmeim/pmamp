@@ -69,8 +69,6 @@
                 <label>Thumbnail</label>
                 <input type="text" name="invThumbnail" id="thumbnailfile" value="/images/no-image.jpg" <?php if (isset($invThumbnail)){echo "value='$invThumbnail'";}?> required>
                 <!-- value="/images/no-image.jpg" -->
-
-
                 <label>Price</label>
                 <input type='number'  step="1" min="0" name="invPrice" id="prname" <?php if (isset($invPrice)){echo "value='$invPrice'";}?> required>
                 <label>Color</label>
