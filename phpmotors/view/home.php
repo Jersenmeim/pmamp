@@ -8,17 +8,11 @@
 </head>
 <body>
     <div class="bg">
-        <?php if(isset($cookieFirstname)){
-        echo "<span id='welcome'>Welcome $cookieFirstname</span>";
-        } ?>
+       
         <header>
-            <img src="./images/site/logo.png" alt="phpmotor_logo">
-            <div class="myaccount" >
-                <?php  
-                
-                    echo $account;
-                ?>
-            </div>
+              <?php    
+                include './snippets/header.php';
+            ?>
         </header>
 
         <nav>

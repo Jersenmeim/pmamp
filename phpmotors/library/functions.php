@@ -4,6 +4,11 @@
 $account = '<a href="../phpmotors/accounts/index.php?action=login-form">My Account</a>';
 $maccount = '<a href="../accounts/index.php?action=login-form">My Account</a>';
 
+if(isset($_SESSION['loggedin'])) {
+   if ($_SESSION['loggedin'] === TRUE) {echo '<a id="acctLink" href="/phpmotors/accounts/index.php/?action=Logout">Logout</a>';}
+} else {echo '<a id="acctLink" href="/phpmotors/accounts/index.php/?action=login-page">My Account</a>';
+   } 
+
 // Build the navigation option list
 
 

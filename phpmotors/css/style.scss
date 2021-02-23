@@ -6,11 +6,7 @@ body{
     background-image: url(../images/site/checkerboard.jpg);
 
     .bg{
-         #welcome{
-            text-align: center;
-            margin: 1em auto;
-            display: block;
-        }
+       
         .container-vehicles{
             display: flex;
          
@@ -18,12 +14,22 @@ body{
             margin: 10px;
         
         }
+        .admin{
+           
+            padding: 2%;
+        }
     }
 }
 
 body{
 .bg{
-   
+    #welcome{
+        text-align: center;
+        margin: 1em auto;
+        display: block;
+    }
+
+ 
     background-color: white;
  
     border: 8px solid #4c96d7;

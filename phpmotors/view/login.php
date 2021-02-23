@@ -10,12 +10,9 @@
 <body>
     <div class="bg">
         <header>
-            <img src="../images/site/logo.png" alt="phpmotor_logo">
-            <div class="myaccount" >
-            <?php    
-                echo $maccount;
+             <?php    
+                include '../snippets/header.php';
             ?>
-            </div>
         </header>
 
         <nav>
@@ -27,11 +24,11 @@
         </nav>
 
         <?php
-        if (isset($message)) {
-        echo $message;
-        }
+            if (isset($_SESSION['message'])) {
+                echo $_SESSION['message'];
+            }
         ?>
-            <form action="#">
+            <form method="post" action="/cse340/phpmotors/accounts/">
 
                 <div class="container">
                 <label for="uname"><b>Username</b></label>

@@ -6,10 +6,6 @@ body {
   background-image: url(../images/site/checkerboard.jpg);
 }
 
-body .bg span {
-  text-align: center;
-}
-
 body .bg .container-vehicles {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,9 +17,19 @@ body .bg .container-vehicles {
   margin: 10px;
 }
 
+body .bg .admin {
+  padding: 2%;
+}
+
 body .bg {
   background-color: white;
   border: 8px solid #4c96d7;
+}
+
+body .bg #welcome {
+  text-align: center;
+  margin: 1em auto;
+  display: block;
 }
 
 body .bg form {
