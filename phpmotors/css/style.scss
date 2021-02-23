@@ -6,8 +6,10 @@ body{
     background-image: url(../images/site/checkerboard.jpg);
 
     .bg{
-        span{
+         #welcome{
             text-align: center;
+            margin: 1em auto;
+            display: block;
         }
         .container-vehicles{
             display: flex;
