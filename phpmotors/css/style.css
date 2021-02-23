@@ -1,0 +1,296 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-image: url(../images/site/checkerboard.jpg);
+}
+
+body .bg span {
+  text-align: center;
+}
+
+body .bg .container-vehicles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+}
+
+body .bg {
+  background-color: white;
+  border: 8px solid #4c96d7;
+}
+
+body .bg form {
+  margin: 2%;
+}
+
+body .bg form .container {
+  padding: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20%;
+  background-color: #d2d2d2;
+}
+
+body .bg form .container label {
+  color: #000000;
+}
+
+body .bg form .container input {
+  padding: 2%;
+  margin: 8px 0;
+}
+
+body .bg form .container input:invalid {
+  background-color: #ffdddd;
+}
+
+body .bg form .container input:required:invalid {
+  border-color: #c00000;
+}
+
+body .bg form .container input:required:valid {
+  border: 2px green solid;
+}
+
+body .bg form .container button {
+  padding: 2%;
+  margin: 4px 0;
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+body .bg form .container button:hover {
+  background-color: yellowgreen;
+}
+
+body .bg #welcome {
+  text-align: center;
+  margin: 1em auto;
+  display: block;
+}
+
+body .bg header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .bg header div {
+  margin: 2%;
+}
+
+body .bg header a {
+  position: relative;
+  top: .5em;
+  text-decoration: none;
+  color: #3a3a3a;
+}
+
+body .bg nav {
+  background-color: #3a3a3a;
+  text-align: left;
+}
+
+body .bg nav ul li {
+  list-style-type: none;
+  display: inline;
+  padding: 10px;
+}
+
+body .bg nav ul li a {
+  padding: 10px 0;
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+body .bg nav ul li:hover {
+  background-color: #4c96d7;
+}
+
+body .bg nav ul li:hover a {
+  color: #3a3a3a;
+}
+
+body .bg .container-vehicles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+}
+
+body .bg main {
+  background-image: url(../images/delorean.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding: 2%;
+  height: 100vh;
+}
+
+body .bg main .heading p {
+  color: #4c96d7;
+  margin: -1px;
+}
+
+body .bg main .heading p:first-child {
+  font-weight: bolder;
+}
+
+body .bg main .button {
+  margin: 15px 0;
+  background-color: #4c96d7;
+  border: 1px solid black;
+  padding: 10px;
+  width: 10%;
+}
+
+body .bg main .button a {
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2em;
+}
+
+body .bg .sub-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body .bg .sub-content .upgrades {
+  width: 30%;
+  margin-bottom: 100px;
+}
+
+body .bg .sub-content .upgrades .grid2x2 {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body .bg .sub-content .upgrades .grid2x2 .box {
+  margin: 10px;
+  background-color: #4c96d7;
+  width: 170px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .bg .sub-content .upgrades .grid2x2 .box img {
+  width: 30%;
+  margin: auto;
+}
+
+body .bg .sub-content .upgrades .grid2x2 .box a {
+  color: blue;
+  text-align: center;
+  background-color: white;
+}
+
+body .bg .sub-content .reviews ul {
+  margin: 0;
+}
+
+body .bg .sub-content .reviews ul li {
+  font-size: x-large;
+}
+
+body .bg footer {
+  border-top: 2px solid #3a3a3a;
+  text-align: center;
+}
+
+body .bg footer p {
+  margin: 2px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .bg .header .myaccount {
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .bg nav {
+    text-align: left;
+  }
+  .bg nav ul li {
+    margin-left: -18px;
+  }
+  .bg nav ul li a {
+    margin: auto;
+    font-size: 12px;
+  }
+  .bg main {
+    height: 60vh;
+  }
+  .bg main .button {
+    margin: 160px auto;
+    background-color: #4c96d7;
+    border: 1px solid black;
+    padding: 10px;
+    width: 30%;
+  }
+  .bg main .button a {
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+  }
+  .bg .sub-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    padding: 2%;
+  }
+  .bg .sub-content .upgrades {
+    width: auto;
+    margin-bottom: 0px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
