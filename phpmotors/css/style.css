@@ -26,6 +26,10 @@ body .bg {
   border: 8px solid #4c96d7;
 }
 
+body .bg h1 {
+  margin: 2%;
+}
+
 body .bg #welcome {
   text-align: center;
   margin: 1em auto;

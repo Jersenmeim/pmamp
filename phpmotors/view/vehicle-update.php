@@ -1,21 +1,22 @@
 <?php
      // Build the classifications option list
      $classifList = '<select name="classificationId" id="classificationId">';
-     $classifList .= "<option>Choose a Car Classification</option>";
-     foreach ($carClassifications as $classification) {
-      $classifList .= "<option value='$classification[classificationId]'";
-      if(isset($classificationId)){
-       if($classification['classificationId'] === $classificationId){
-        $classifList .= ' selected ';
-       }
-      } elseif(isset($invInfo['classificationId'])){
-      if($classification['classificationId'] === $invInfo['classificationId']){
-       $classifList .= ' selected ';
-      }
+     foreach ($classifications as $classification) {
+     $classifList .= "<option value='$classification[classificationId]'";
+     if(isset($classificationId)){
+     if($classification['classificationId'] === $classificationId){
+     $classifList .= ' selected ';
+     }
+     } elseif(isset($invInfo['classificationId'])){
+     if($classification['classificationId'] === $invInfo['classificationId']){
+     $classifList .= ' selected ';
+     }
      }
      $classifList .= ">$classification[classificationName]</option>";
      }
      $classifList .= '</select>';
+
+     
 ?>
 
 
@@ -39,7 +40,7 @@
 
         <nav><?php echo $navList; ?></nav>
         <div class="container-vehicles">
-            <a href="?action=return">Management Menu</a> 
+            <a href='/cse340/phpmotors/vehicles?action=return'>Management Menu</a> 
         </div>
         <?php
             if (isset($message)) {
@@ -63,8 +64,7 @@
                 <label>What Model?</label>
                 <input type="text" name="invModel" id="moname" <?php if (isset($invModel)){echo "value='$invModel'";}elseif(isset($invInfo['invModel'])) {echo "value='$invInfo[invModel]'"; }elseif(isset($invInfo['invMake']) && isset($invInfo['invModel'])) {echo "value='$invInfo[invMake] $invInfo[invModel]'"; }?> required>
                 <label>Description</label>
-                <textarea name="invDescription" id="invDescription" id="dcname" cols="30" rows="5" required>
-                <?php if(isset($invDescription)){ echo $invDescription; } elseif(isset($invInfo['invDescription'])) {echo $invInfo['invDescription']; }?></textarea>
+                <textarea name="invDescription" id="invDescription" id="dcname" cols="30" rows="5" required><?php if(isset($invDescription)){ echo $invDescription; } elseif(isset($invInfo['invDescription'])) {echo $invInfo['invDescription']; }?></textarea>
                 <label>Image</label>
                 <input type="text" name="invImage" id="imagefile" <?php if (isset($invImage)){echo "value='$invImage'";}?> value="/images/no-image.jpg" required>
                 <!-- value="/images/no-image.jpg" -->
@@ -74,16 +74,18 @@
 
 
                 <label>Price</label>
-                <input type='number'  step="1" min="0" name="invPrice" id="prname" <?php if (isset($invPrice)){echo "value='$invPrice'";}?> required>
+                <input type='number'  step="1" min="0" name="invPrice" id="prname" <?php if (isset($invPrice)){echo "value='$invPrice'";}elseif(isset($invInfo['invPrice'])) {echo "value='$invInfo[invPrice]'"; }
+                ?> required>
                 <label>Color</label>
-                <input type="text" name="invColor" id="coname" pattern="[^0-9]*" <?php if (isset($invColor)){echo "value='$invColor'";}?> required>
+                <input type="text" name="invColor" id="coname" pattern="[^0-9]*" <?php if (isset($invColor)){echo "value='$invColor'";}elseif(isset($invInfo['invColor'])) {echo "value='$invInfo[invColor]'"; }?> required>
                 <label>Stocks left?</label>
-                <input type="number"  min="0" name="invStock" id="stockname" <?php if (isset($invStock)){echo "value='$invStock'";}?> required>
+                <input type="number"  min="0" name="invStock" id="stockname" <?php if (isset($invStock)){echo "value='$invStock'";}elseif(isset($invInfo['invStock'])) {echo "value='$invInfo[invStock]'"; }?> required>
                 
                 
 
                 <input type="submit" name="submit" id="regbtn" value="Add Vehicle">
                 <input type="hidden" name="action" value="updateVehicle">
+                <input type="hidden" name="invId" value="<?php if(isset($invInfo['invId'])){ echo $invInfo['invId'];} elseif(isset($invId)){ echo $invId; } ?>">
                 </div>
             </form>
 

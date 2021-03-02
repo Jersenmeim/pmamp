@@ -3,6 +3,9 @@
     header('location: /phpmotors/');
     exit;
     }
+    if (isset($_SESSION['message'])) {
+        $message = $_SESSION['message'];
+       }
 ?>
 
 <!DOCTYPE html>
@@ -24,12 +27,7 @@
             <?php echo $navList;?>
         </nav>
 
-        <?php
-                if (isset($message)) {
-                    echo $message;
-                    }
-        ?>
-            
+     
         <div class="container-vehicles">
             <a href="?action=add-classification">Add Classification</a> 
             <a href="?action=add-vehicles">Add Vehicle</a> 
@@ -64,3 +62,4 @@
 </body>
 
 </html>
+<?php unset($_SESSION['message']); ?>
