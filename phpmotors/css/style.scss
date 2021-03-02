@@ -92,10 +92,11 @@ body{
         
         display: flex;
         justify-content: space-between;
-        div{
+        span{
             margin: 2%;
         }
-        a{
+        #acctLink{
+            margin: 2%;
             position: relative;
             top: .5em;
             text-decoration: none;
@@ -141,8 +142,15 @@ body{
         flex-direction: column;
         margin: 10px;
 
+        #classificationList{
+            width: 15%;
+        }
+
     }
     
+    #inventoryDisplay{
+        padding: 1%;
+    }
 
     main{
         background-image: url(../images/delorean.jpg);

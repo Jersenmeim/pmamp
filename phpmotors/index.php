@@ -15,10 +15,7 @@
       $classifications = getClassifications();
       //populate navbar
       $navList = navBarPopulate($classifications).nav2($classifications);
-      
-      if(isset($_COOKIE['firstname'])){
-         $cookieFirstname = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_STRING);
-        }
+  
 
       $action = filter_input(INPUT_POST, 'action');
       if ($action == NULL){

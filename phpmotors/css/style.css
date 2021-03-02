@@ -97,11 +97,12 @@ body .bg header {
           justify-content: space-between;
 }
 
-body .bg header div {
+body .bg header span {
   margin: 2%;
 }
 
-body .bg header a {
+body .bg header #acctLink {
+  margin: 2%;
   position: relative;
   top: .5em;
   text-decoration: none;
@@ -143,6 +144,14 @@ body .bg .container-vehicles {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 10px;
+}
+
+body .bg .container-vehicles #classificationList {
+  width: 15%;
+}
+
+body .bg #inventoryDisplay {
+  padding: 1%;
 }
 
 body .bg main {

@@ -17,6 +17,8 @@
       //build navbar list
       $navList = navBarPopulate($classifications).nav1($classifications);
 
+    
+
       $action = filter_input(INPUT_POST, 'action' , FILTER_SANITIZE_STRING);
       if ($action == NULL){
       $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
@@ -124,8 +126,60 @@
             }
         break;
 
+
+      /* * ********************************** 
+      * Get vehicles by classificationId 
+      * Used for starting Update & Delete process 
+      * ********************************** */ 
+      case 'getInventoryItems': 
+        // Get the classificationId 
+        $classificationId = filter_input(INPUT_GET, 'classificationId', FILTER_SANITIZE_NUMBER_INT); 
+        // Fetch the vehicles by classificationId from the DB 
+        $inventoryArray = getInventoryByClassification($classificationId); 
+        // Convert the array to a JSON object and send it back 
+        echo json_encode($inventoryArray); 
+        break;
+
+
+
+        case 'mod':
+          $invId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+          $invInfo = getInvItemInfo($invId);
+          if(count($invInfo)<1){
+            $message = 'Sorry, no vehicle information could be found.';
+          }
+          break;
+          include '../view/vehicle-update.php';
+          exit;
+
         default:
-        include '../view/vehicle-man.php';
+
+        $classificationList = buildClassificationList($classifications);
+          if(isset($_SESSION['loggedin']))
+            {
+              if ($_SESSION['loggedin'] === TRUE) 
+                {
+                  if($_SESSION['clientData']['clientLevel'] > 1)
+                  {
+                    include '../view/vehicle-man.php';
+                  }
+                  else {header('Location: /cse340/phpmotors');}
+                }
+              
+              
+            } 
+              
+            
+            else {header('Location: /cse340/phpmotors');
+          }
+
+
+
+          
+
+        
+
+
         break;
         }
 ?>

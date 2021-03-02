@@ -1,13 +1,8 @@
 
 
 <?php
-$account = '<a href="../phpmotors/accounts/index.php?action=login-form">My Account</a>';
-$maccount = '<a href="../accounts/index.php?action=login-form">My Account</a>';
 
-if(isset($_SESSION['loggedin'])) {
-   if ($_SESSION['loggedin'] === TRUE) {echo '<a id="acctLink" href="/phpmotors/accounts/index.php/?action=Logout">Logout</a>';}
-} else {echo '<a id="acctLink" href="/phpmotors/accounts/index.php/?action=login-page">My Account</a>';
-   } 
+
 
 // Build the navigation option list
 
@@ -18,7 +13,9 @@ function navBarPopulate($classifications) {
    
    function nav1($classifications){
       $navList = '<ul>';
+      
       $navList .= '<li>
+      
       <a href="../index.php?action="  title="View the PHP Motors home page">Home</a></li>';
       foreach ($classifications as $classification) {
        $navList .= "<li><a href='../index.php?action=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
@@ -58,27 +55,26 @@ function checkPassword($clientPassword){
 }
 
 // Build the classifications option list
-function buildClassificationList($classifications){
-      $classifList = '<select name="classificationId" id="classificationId">';
-      
+function buildClassificationList($classifications){ 
+   $classificationList = '<select name="classificationId" id="classificationList">'; 
+   $classificationList .= "<option>Choose a Classification</option>"; 
+   foreach ($classifications as $classification) { 
+    $classificationList .= "<option value='$classification[classificationId]'>$classification[classificationName]</option>"; 
+   } 
+   $classificationList .= '</select>'; 
+   return $classificationList; 
+  }
 
-      foreach ($classifications as $classification) {
-      $classifList .= "<option value='$classification[classificationId]'";
-      if(isset($classificationId)){
-      if($classification['classificationId'] === $classificationId){
-      $classifList .= ' selected ';
-      }
-      } elseif(isset($invInfo['classificationId'])){
-      if($classification['classificationId'] === $invInfo['classificationId']){
-      $classifList .= ' selected ';
-      }
-      }
-      $classifList .= ">$classification[classificationName]</option>";
-      }
-      $classifList .= '</select>';
-      return  $classifList;
-}
-
+function getInventoryByClassification($classificationId){ 
+   $db = phpmotorsConnect(); 
+   $sql = ' SELECT * FROM inventory WHERE classificationId = :classificationId'; 
+   $stmt = $db->prepare($sql); 
+   $stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_INT); 
+   $stmt->execute(); 
+   $inventory = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+   $stmt->closeCursor(); 
+   return $inventory; 
+  }
 
 
 ?>  

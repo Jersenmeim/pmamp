@@ -16,7 +16,6 @@
       //navbar function
       $navList = navBarPopulate($classifications).nav1($classifications);
 
-
       $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
       if ($action == NULL){
       $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
@@ -120,12 +119,17 @@
             include '../view/admin.php';
             exit;
          break;
+
+
+         case 'admin':
+            include '../view/admin.php';
+            break;
          case 'Logout':
-            //destroy session
-            $_SESSION = array();
-            session_destroy();
-            //header('Location: /cse340/phpmotors');
-            break;  
+        //destroy session
+        $_SESSION = array();
+        session_destroy();
+        header('Location: /cse340/phpmotors');
+        exit;  
         
 
 

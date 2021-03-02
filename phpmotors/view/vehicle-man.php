@@ -1,3 +1,10 @@
+<?php
+    if ($_SESSION['clientData']['clientLevel'] < 2) {
+    header('location: /phpmotors/');
+    exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +16,8 @@
 </head>
 <body>
     <div class="bg">
-        <header>
-            <img src="../images/site/logo.png" alt="phpmotor_logo">
-            <div class="myaccount"><?php echo $account;?></div>
+    <header>
+            <?php require $_SERVER['DOCUMENT_ROOT'].'/cse340/phpmotors/snippets/header.php'; ?>
         </header>
 
         <nav>
@@ -27,7 +33,25 @@
         <div class="container-vehicles">
             <a href="?action=add-classification">Add Classification</a> 
             <a href="?action=add-vehicles">Add Vehicle</a> 
+
+            <?php
+            if (isset($message)) { 
+            echo $message; 
+            } 
+            if (isset($classificationList)) { 
+            echo '<h2>Vehicles By Classification</h2>'; 
+            echo '<p>Choose a classification to see those vehicles</p>'; 
+            echo $classificationList; 
+            }
+        ?>
         </div>
+        
+
+    <noscript>
+        <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
+    </noscript>
+
+    <table id="inventoryDisplay"></table>
             
 
         <?php    
@@ -35,7 +59,7 @@
         ?>
         
     </div>
-   
+    <script src="../js/inventory.js"></script>
     <script src="../js/script.js"></script>
 </body>
 
