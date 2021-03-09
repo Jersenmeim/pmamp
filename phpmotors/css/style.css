@@ -1,12 +1,14 @@
-* {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+*,
+*:before,
+*:after {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
-body {
-  background-image: url(../images/site/checkerboard.jpg);
-}
-
-body .bg .container-vehicles {
+.bg .container-vehicles {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,17 +19,106 @@ body .bg .container-vehicles {
   margin: 10px;
 }
 
-body .bg .admin {
+.bg .admin {
   padding: 2%;
 }
 
+body {
+  background-image: url(/cse340/phpmotors/images/vehicles/site/checkerboard.jpg);
+}
+
 body .bg {
+  /* For vehicle display in classification view */
   background-color: white;
   border: 8px solid #4c96d7;
 }
 
-body .bg h1 {
+body .bg header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .bg header span {
   margin: 2%;
+}
+
+body .bg header #acctLink {
+  margin: 2%;
+  position: relative;
+  top: 0.5em;
+  text-decoration: none;
+  color: #3a3a3a;
+}
+
+body .bg h1 {
+  margin: 20px;
+}
+
+body .bg #inv-display {
+  margin: 10px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+body .bg #inv-display h2 {
+  font-size: 1rem;
+}
+
+body .bg #inv-display hr {
+  margin: auto;
+  position: relative;
+  width: 100%;
+}
+
+body .bg #inv-display li {
+  margin-bottom: .5em;
+  border: 1px #ccc solid;
+  list-style-type: none;
+  margin: 10px;
+  max-width: 200px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body .bg #inv-display li div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body .bg #inv-display li div img {
+  width: 100%;
+}
+
+body .bg .welcome {
+  margin: 1% 0;
 }
 
 body .bg #welcome {
@@ -92,27 +183,6 @@ body .bg #welcome {
   display: block;
 }
 
-body .bg header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-body .bg header span {
-  margin: 2%;
-}
-
-body .bg header #acctLink {
-  margin: 2%;
-  position: relative;
-  top: .5em;
-  text-decoration: none;
-  color: #3a3a3a;
-}
-
 body .bg nav {
   background-color: #3a3a3a;
   text-align: left;
@@ -159,7 +229,7 @@ body .bg #inventoryDisplay {
 }
 
 body .bg main {
-  background-image: url(../images/delorean.jpg);
+  background-image: url(/cse340/phpmotors/images/vehicles/delorean.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -260,56 +330,13 @@ body .bg footer p {
   margin: 2px;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-  .bg .header .myaccount {
-    margin: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .bg header {
+    display: block;
     text-align: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  .bg nav {
-    text-align: left;
-  }
-  .bg nav ul li {
-    margin-left: -18px;
-  }
-  .bg nav ul li a {
-    margin: auto;
-    font-size: 12px;
-  }
-  .bg main {
-    height: 60vh;
-  }
-  .bg main .button {
-    margin: 160px auto;
-    background-color: #4c96d7;
-    border: 1px solid black;
-    padding: 10px;
-    width: 30%;
-  }
-  .bg main .button a {
-    margin: 10px;
-    text-decoration: none;
-    color: black;
-    font-size: 1em;
-  }
-  .bg .sub-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    padding: 2%;
-  }
-  .bg .sub-content .upgrades {
-    width: auto;
-    margin-bottom: 0px;
   }
 }
 /*# sourceMappingURL=style.css.map */
