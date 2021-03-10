@@ -2,10 +2,11 @@
 // Build the navigation option list
 function navBarPopulate($carclassifications) {
    // Build a navigation bar using the $classifications array
-   $navList = '<ul>';
-   $navList .= "<li><a href='/cse340/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
+   $navList = '<ul id="ul">';
+   $navList .= "<li id='click' ><a>Menu</a></li>";
+   $navList .= "<li class='link' ><a href='/cse340/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
    foreach ($carclassifications as $classification) {
-      $navList .= "<li><a href='/cse340/phpmotors/vehicles/?action=classification&classificationName=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] lineup of vehicles'>$classification[classificationName]</a></li>";
+      $navList .= "<li class='link'><a href='/cse340/phpmotors/vehicles/?action=classification&classificationName=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] lineup of vehicles'>$classification[classificationName]</a></li>";
    }
    $navList .= '</ul>';
    return $navList;
@@ -51,12 +52,14 @@ function navBarPopulate($carclassifications) {
       $dv = '<ul id="inv-display">';
       foreach ($vehicles as $vehicle) {
       $dv .= '<li>';
-      $dv .= "<a href='/cse340/phpmotors/vehicles/?action=pullVehicleData&vehicleId={$vehicle["invId"]}'>";
+      $dv .= "<div><a href='/cse340/phpmotors/vehicles/?action=pullVehicleData&vehicleId={$vehicle["invId"]}'>";
       $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
-      $dv .= "</a>";
-     
+      $dv .= "</a></div>";
+      $dv .= "<hr>";
+      $dv .= '<div class="container">';
       $dv .= "<a href='/cse340/phpmotors/vehicles/?action=pullVehicleData&vehicleId={$vehicle["invId"]}'><h2>$vehicle[invMake] $vehicle[invModel]</h2></a>";
-      $dv .= "<span>$$vehicle[invPrice]</span>";
+      $dv .= "<span>Price: $$vehicle[invPrice]</span>";
+      $dv .= '</div>';
       $dv .= '</li>';
      
       }
@@ -65,7 +68,8 @@ function navBarPopulate($carclassifications) {
    }
    function vehicleDetailPage($vehicle) {
       $money = number_format($vehicle['invPrice'], 2, ".", ",");
-      $dv = "<h1>$vehicle[invMake] $vehicle[invModel]</h1>";
+      $dv = "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
+      $dv .= "<div class='vehicle-details'>";
       $dv .= "<img src='$vehicle[invImage]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
       $dv .= "<p>Price: $$money</p>";
       $dv .= '<hr>';
@@ -73,6 +77,7 @@ function navBarPopulate($carclassifications) {
       $dv .= "<p>$vehicle[invDescription]</p>";
       $dv .= "<p><b>Color: </b>$vehicle[invColor]</p>";
       $dv .= "<p><b>Quantity in Stock: </b>$vehicle[invStock]</p>";
+      $dv .= "</div>";
      
       return $dv;
    }

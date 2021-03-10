@@ -26,7 +26,6 @@
 	    elseif(isset($invMake) && isset($invModel)) { 
 		echo "Modify $invMake $invModel"; }?></title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/vehicles.css">
 </head>
 <body>
     <div class="bg">

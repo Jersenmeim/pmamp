@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $classificationName; ?> vehicles | PHP Motors, Inc.</title>
+    <title>Details | PHP Motors, Inc.</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -33,3 +33,4 @@
 </body>
 
 </html>
+<?php unset($_SESSION['message']); ?>

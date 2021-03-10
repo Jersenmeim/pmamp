@@ -27,9 +27,13 @@
                 <p>Superman doors</p>
                 <p>Fuzzy dice!</p>
             </div>
+            
             <div class="button">
                 <a href="#">Own Today</a>
             </div>
+            <div class="delorean">
+                <img src="./images/vehicles/delorean.jpg" alt="delorean">
+            </div>  
         </main>
         <div class="sub-content">
                 <div class="upgrades">
