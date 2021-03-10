@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> bd9a50abed3269661b68cd183e82b7e85bdffd20
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,11 @@
 <body>
     <div class="bg">
     <header>
+<<<<<<< HEAD
             <img src="./cse340/phpmotors/images/vehicles/site/logo.png" alt="phpmotor_logo">
+=======
+            <img src="./images/site/logo.png" alt="phpmotor_logo">
+>>>>>>> bd9a50abed3269661b68cd183e82b7e85bdffd20
             <div class="myaccount" >
                 <a href="?action=login-page">My Account</a>
             </div>
@@ -17,7 +27,13 @@
 
         <nav>
             <?php    
+<<<<<<< HEAD
                 echo $navList;
+=======
+                
+                echo $navList;
+                
+>>>>>>> bd9a50abed3269661b68cd183e82b7e85bdffd20
             ?>
         </nav>
        
