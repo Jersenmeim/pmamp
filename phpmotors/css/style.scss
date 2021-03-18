@@ -74,10 +74,34 @@ body {
       #image-display {
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-wrap: wrap;
 
         li {
+          width: 10%;
           list-style-type: none;
+          border: black solid 1px;
+          padding: 1%;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          word-wrap: break-word;
 
+          img {
+            width: 100%;
+          }
+
+          p {
+
+
+
+            a {
+
+              text-decoration: none;
+              color: red;
+            }
+
+          }
         }
       }
     }
@@ -532,10 +556,13 @@ body {
         #image-display {
           margin: 0;
           padding: 0;
+          flex-direction: column;
+          width: 100%;
 
           li {
             list-style-type: none;
-            border: black solid 1px;
+            width: 100%;
+
 
 
             p {

@@ -60,13 +60,15 @@ if (isset($_SESSION['message'])) {
 
                 <h2>Existing Images</h2>
                 <p class="notice">If deleting an image, delete the thumbnail too and vice versa.</p>
-                <?php
+               
+
+                
+            </div>
+            <hr>
+            <?php
                 if (isset($imageDisplay)) {
                 echo $imageDisplay;
                 } ?>
-
-                <hr>
-            </div>
         </div>
         
         <?php    
