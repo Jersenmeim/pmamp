@@ -122,5 +122,5 @@ switch ($action) {
         break;
 
 }
-unset($_SESSION['message']);
+
 ?>

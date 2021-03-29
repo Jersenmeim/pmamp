@@ -21,17 +21,17 @@ if (isset($_SESSION['message'])) {
         <nav>
             <?php echo $navList;?>
         </nav>
-
+        <?php
+                if (isset($message)) {
+                echo $message;
+                } 
+                ?>
         <div class="image-upload">
             <div class="container-images">
                 <h1> Image Management </h1>
                 <p>Choose one of the options below:</p>
                 <h2>Add New Vehicle Image</h2>
-                <?php
-                if (isset($message)) {
-                echo $message;
-                } 
-                ?>
+              
 
                 <form action="/cse340/phpmotors/uploads/" method="post" enctype="multipart/form-data">
                     <fieldset>
@@ -68,7 +68,8 @@ if (isset($_SESSION['message'])) {
             <?php
                 if (isset($imageDisplay)) {
                 echo $imageDisplay;
-                } ?>
+                } 
+            ?>
         </div>
         
         <?php    
