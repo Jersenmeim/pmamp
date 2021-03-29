@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<<<<<<< HEAD
     <div class="bg">
             <header>
                 <img src="images/site/logo.png" alt="phpmotor_logo">
@@ -24,4 +25,37 @@
     
     <script src="js/script.js"></script>
 </body>
+=======
+<div class="bg">
+        <header>
+            <img src="images/site/logo.png" alt="phpmotor_logo">
+            <div class="myaccount" >
+            <?php    
+                echo $account;
+            ?>
+            </div>
+        </header>
+
+        <nav>
+            <?php    
+                
+                echo $navList;
+                
+            ?>
+            </nav>
+     
+       
+            <h2>Server Error</h2>
+            <p>Sorry our server seems to be experiencing some technical difficulties</p>
+
+        <?php    
+            include 'footer.php';
+        ?>
+        
+    </div>
+   
+    <script src="js/script.js"></script>
+</body>
+
+>>>>>>> bd9a50abed3269661b68cd183e82b7e85bdffd20
 </html>
