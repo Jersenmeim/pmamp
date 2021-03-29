@@ -1,4 +1,5 @@
 <?php
+
     //Session Creation
     session_start();
     // Get the database connection file
