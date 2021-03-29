@@ -3,20 +3,13 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 ];
 
 function lastModified() {
-<<<<<<< HEAD
   var modiDate = new Date(document.lastModified);
   var showAs = modiDate.getDate() + " " + monthNames[modiDate.getMonth()] + ", " + modiDate.getFullYear();
   return showAs
-=======
-    var modiDate = new Date(document.lastModified);
-    var showAs = modiDate.getDate() + " " + monthNames[modiDate.getMonth()] + ", " + modiDate.getFullYear();
-    return showAs
->>>>>>> bd9a50abed3269661b68cd183e82b7e85bdffd20
 }
 
 
 
-<<<<<<< HEAD
 document.getElementById("lastMod").innerHTML = ("Last Updated: " + lastModified());
 
 
@@ -39,6 +32,3 @@ function showlist() {
 
 
 }
-=======
-document.getElementById("lastMod").innerHTML = ( "Last Updated: " + lastModified());
->>>>>>> bd9a50abed3269661b68cd183e82b7e85bdffd20
